@@ -1,0 +1,14 @@
+[project]
+name = "fl-proj"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "einops>=0.8.1",
+    "matplotlib>=3.10.1",
+    "pfl>=0.2.0",
+    "torch>=2.6.0",
+    "torchaudio>=2.6.0",
+    "torchvision>=0.21.0",
+]
