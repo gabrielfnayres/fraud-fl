@@ -1,6 +1,7 @@
 import torch
 import random
 import numpy as np
+
 import dgl
 from dgl.data.fraud import FraudAmazonDataset, FraudYelpDataset
 from dgl.dataloading import NeighborSampler, DataLoader
@@ -59,4 +60,4 @@ def load_data(data_name, seed, train_ratio, test_ratio, n_layer, batch_size):
     valid_loader = DataLoader(graph, idx_valid, sampler, batch_size=batch_size, shuffle=False, drop_last=False, use_uva=True)
     test_loader = DataLoader(graph, idx_test, sampler, batch_size=batch_size, shuffle=False, drop_last=False, use_uva=True)
 
-    return features.shape[1], train_loader, valid_loader, test_loader
+    return features.shape[1], train_loader, valid_loader, test_loader, labels

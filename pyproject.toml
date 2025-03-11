@@ -9,6 +9,7 @@ dependencies = [
     "matplotlib>=3.10.1",
     "numpy>=1.26.4",
     "pfl>=0.2.0",
+    "scikit-learn>=1.6.1",
     "torch>=2.6.0",
     "torchaudio>=2.6.0",
     "torchvision>=0.21.0",
