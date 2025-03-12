@@ -39,7 +39,7 @@ class NodeLabelEmbedding(nn.Module):
 #graph attention
 
 class LEXGAT(nn.Module):
-    def __init__(in_dim, hidden_dim, num_heads):
+    def __init__(self, in_dim, hidden_dim, num_heads):
         super(LEXGAT, self).__init__()
         self.in_dim = in_dim
         self.hidden_dim = hidden_dim

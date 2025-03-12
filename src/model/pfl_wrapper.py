@@ -1,4 +1,3 @@
-from typing import override
 import torch 
 import torch.nn
 
@@ -25,5 +24,3 @@ class WrapperModel(PyTorchModel):
         with torch.no_grad():
             for p, param in zip(self.torch_model.parameters(), parameters):
                 p.data.copy_(torch.tensor(param, device=torch.device("mps")))
-
-

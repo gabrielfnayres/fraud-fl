@@ -30,7 +30,8 @@ def load_federated_dataset():
     )
 
 
-    dirichlet_alpha = [0.1]*len(train_loader)
+    num_classes = len(torch.unique(labels))
+    dirichlet_alpha = [0.1] * num_classes
 
     data_sampler = get_data_sampler(
         sample_type='dirichlet',
@@ -63,4 +64,4 @@ def load_federated_dataset():
         sample_dataset_len=test_sample_len
     )
 
-    return federated_train_dataset, federated_val_dataset, federated_test_dataset
+    return federated_train_dataset, federated_val_dataset, federated_test_dataset, features, train_loader, valid_loader, test_loader, labels

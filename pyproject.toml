@@ -3,14 +3,5 @@ name = "fl-proj"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "einops>=0.8.1",
-    "matplotlib>=3.10.1",
-    "numpy>=1.26.4",
-    "pfl>=0.2.0",
-    "scikit-learn>=1.6.1",
-    "torch>=2.6.0",
-    "torchaudio>=2.6.0",
-    "torchvision>=0.21.0",
-]
+requires-python = ">=3.10.0"
+dependencies = []

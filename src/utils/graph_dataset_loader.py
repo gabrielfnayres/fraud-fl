@@ -2,7 +2,7 @@ import torch
 import random
 import numpy as np
 
-import dgl
+
 from dgl.data.fraud import FraudAmazonDataset, FraudYelpDataset
 from dgl.dataloading import NeighborSampler, DataLoader
 from dgl import RowFeatNormalizer
@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 
 def load_data(data_name, seed, train_ratio, test_ratio, n_layer, batch_size):
-
+    
     # Load dataset
     if data_name == 'yelp':
         graph = FraudYelpDataset().graph
@@ -56,8 +56,8 @@ def load_data(data_name, seed, train_ratio, test_ratio, n_layer, batch_size):
         graph.edges[etype].data['prob'] = prob
             
     sampler = NeighborSampler(n_samples, prob='prob')
-    train_loader = DataLoader(graph, idx_train, sampler, batch_size=batch_size, shuffle=True, drop_last=False, use_uva=True)
-    valid_loader = DataLoader(graph, idx_valid, sampler, batch_size=batch_size, shuffle=False, drop_last=False, use_uva=True)
-    test_loader = DataLoader(graph, idx_test, sampler, batch_size=batch_size, shuffle=False, drop_last=False, use_uva=True)
+    train_loader = DataLoader(graph, idx_train, sampler, batch_size=batch_size, shuffle=True, drop_last=False, use_uva=False)
+    valid_loader = DataLoader(graph, idx_valid, sampler, batch_size=batch_size, shuffle=False, drop_last=False, use_uva=False)
+    test_loader = DataLoader(graph, idx_test, sampler, batch_size=batch_size, shuffle=False, drop_last=False, use_uva=False)
 
     return features.shape[1], train_loader, valid_loader, test_loader, labels
